@@ -1,1 +1,2 @@
-Repositorio contine todos los ejemplos y códigos sobre github actions
+Repositorio contiene todos los ejemplos y códigos sobre github actions.
+
