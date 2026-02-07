@@ -1,12 +1,13 @@
 name: 10 - Controlling the Execution Flow
 
-on: 
+on:
   workflow_dispatch:
     inputs:
-        pass-unit-tests:
-          required: true
-          default: false
-          type: boolean
+      pass-unit-tests:
+        type: boolean
+        description: Whether unit tests will pass or not
+        default: true
+
 
 jobs:
     lint-build:
@@ -21,7 +22,7 @@ jobs:
             - name: Running unit tests
               run: echo "Running tests..."
             - name: Failing tests
-              if: ${{ !github.event.inputs.pass-unit-tests }}
+              if: ${{ !inputs.pass-unit-tests }}
               run: |
                   echo "Tests failed"
                   exit 1
